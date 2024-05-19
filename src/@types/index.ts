@@ -8,3 +8,8 @@ export interface Product {
     createdAt: string
     updatedAt: string
 }
+
+export interface MarketItem extends Product {
+    quantity: number
+    totalValue: number
+}

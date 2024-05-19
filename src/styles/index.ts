@@ -7,6 +7,6 @@ export const Background = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #fff;
+    background-color: var(--background);
     position: relative;
 `

@@ -2,8 +2,10 @@
 
 import { Product } from "@/@types"
 import { useQuery } from "@tanstack/react-query"
-import { ProductCard } from "../product-card/product-card"
+import { ProductCard } from "../product-card"
 import { AllProductsStyle } from "./style"
+import { motion } from "framer-motion"
+import { Loading } from "../loading"
 
 export const AllProducts = () => {
 
@@ -21,23 +23,29 @@ export const AllProducts = () => {
         }
     })
 
-    if (!products) return
+    if (!products || isLoading) return <Loading />
 
     return (
         <AllProductsStyle>
             {
-                products.map((product) => {
+                products.map((product, index) => {
 
                     const { id } = product
 
                     return (
-                        <ProductCard
+                        <motion.div
                             key={id}
-                            product={product}
-                        />
+                            initial={{ scale: 0, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0, opacity: 0 }}
+                            transition={{ duration: 0.3, delay: index * 0.05 }}
+                        >
+                            <ProductCard product={product} />
+                        </motion.div>
                     )
                 })
             }
+
         </AllProductsStyle>
     )
 }
