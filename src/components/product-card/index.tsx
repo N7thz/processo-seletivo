@@ -49,8 +49,8 @@ export const ProductCard = ({ product }: ProductCardProps) => {
             <div className="image">
                 <Image
                     src={photo}
-                    width={171.62}
-                    height={115}
+                    width={161.62}
+                    height={105}
                     quality={100}
                     alt={`${name} image`}
                 />

@@ -1,4 +1,3 @@
-import { Background, } from "@/styles"
 import { Header } from "@/components/header"
 import { Main } from "@/components/main"
 import { Footer } from "@/components/footer"
@@ -7,11 +6,12 @@ import { MarketCart } from "@/components/market-cart"
 export default function Home() {
 
   return (
-    <Background>
+
+    <div className="min-h-screen bg-background text-primary-foreground">
       <Header />
       <Main />
       <Footer />
       <MarketCart />
-    </Background>
+    </div>
   )
 }

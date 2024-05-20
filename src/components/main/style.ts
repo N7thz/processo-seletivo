@@ -5,7 +5,6 @@ import { styled } from "styled-components"
 export const MainStyle = styled.main`
     width: 100%;
     min-height: calc(100vh - 114px);
-    background-color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;

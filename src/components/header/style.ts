@@ -10,7 +10,6 @@ export const HeaderStyle = styled.header`
     align-items: center;
     background-color: var(--primary);
     padding: 28px 65px;
-    color: #fff;
 
     section {
         display: flex;

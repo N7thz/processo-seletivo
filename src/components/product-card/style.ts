@@ -3,7 +3,7 @@
 import { styled } from "styled-components"
 
 export const ProductCardStyle = styled.div`
-    min-height: 280px;
+    height: 300px;
     width: 230px;
     display: flex;
     flex-direction: column;
@@ -11,6 +11,8 @@ export const ProductCardStyle = styled.div`
     box-shadow: 0px 2px 8px 0px #00000022;
     border-radius: 8px;
     overflow: hidden;
+    background-color: #fff;
+    color: #000;
 
     &:hover {
         transform: scale(105%);
@@ -19,11 +21,11 @@ export const ProductCardStyle = styled.div`
     
     .image {
         width: 100%;
-        min-height: 50%;
+        min-height: 40%;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 16px;
+        padding: 8px;
     }
 
     .item-container {

@@ -4,7 +4,7 @@ import { ShoppingCart } from "lucide-react"
 import { HeaderStyle } from "./style"
 import { Button } from "../button"
 import { useMarket } from "@/context/market-context"
-import { ToogleMode } from "../toggle-mode"
+import { ModeToggle } from "../toggle-mode"
 
 export const Header = () => {
 
@@ -12,12 +12,12 @@ export const Header = () => {
 
     return (
         <HeaderStyle>
-            <section>
+            <section className="text-white dark:text-black">
                 <span>MKS</span>
                 <span>Sistemas</span>
             </section>
             <div>
-                <ToogleMode />
+                <ModeToggle />
                 <Button>
                     <ShoppingCart color="black" />
                     {marketCard.length}

@@ -4,6 +4,7 @@ import StyledComponentsRegistry from "@/lib/registry"
 import { GlobalStyle } from "@/styles/GlobalStyle"
 import { MarketProvider } from "@/context/market-context"
 import "./globals.css"
+import { ThemeProvider } from "@/context/theme-context"
 
 const montserrat = Montserrat({ subsets: ["latin"] })
 
@@ -20,12 +21,17 @@ export default function RootLayout({
   return (
     <html>
       <body className={montserrat.className}>
-        <StyledComponentsRegistry>
-          <MarketProvider>
-            {children}
-          </MarketProvider>
-          <GlobalStyle />
-        </StyledComponentsRegistry>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+        >
+          <StyledComponentsRegistry>
+            <MarketProvider>
+              {children}
+            </MarketProvider>
+            <GlobalStyle />
+          </StyledComponentsRegistry>
+        </ThemeProvider>
       </body>
     </html>
   )

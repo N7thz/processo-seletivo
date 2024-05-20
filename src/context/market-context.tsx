@@ -9,7 +9,6 @@ import {
     useState
 } from "react"
 import { MarketItem } from "@/@types"
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 
 interface MarketContextProps {
     marketCard: MarketItem[]
@@ -22,8 +21,6 @@ const MarketContext = createContext({} as MarketContextProps)
 
 export function MarketProvider({ children }: { children: ReactNode }) {
 
-    const queryClient = new QueryClient()
-
     const [marketCard, setMarketCard] = useState<MarketItem[]>([])
     const [isMarketCartOpen, setIsMarketCartOpen] = useState<boolean>(false)
 
@@ -33,11 +30,9 @@ export function MarketProvider({ children }: { children: ReactNode }) {
     }
 
     return (
-        <QueryClientProvider client={queryClient}>
-            <MarketContext.Provider value={value}>
-                {children}
-            </MarketContext.Provider>
-        </QueryClientProvider>
+        <MarketContext.Provider value={value}>
+            {children}
+        </MarketContext.Provider>
     )
 }
 
