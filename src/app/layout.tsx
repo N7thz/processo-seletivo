@@ -1,10 +1,10 @@
 import type { Metadata } from "next"
 import { Montserrat } from "next/font/google"
 import StyledComponentsRegistry from "@/lib/registry"
-import { GlobalStyle } from "@/styles/GlobalStyle"
+import { GlobalStyle } from "@/lib/GlobalStyle"
 import { MarketProvider } from "@/context/market-context"
-import "./globals.css"
 import { ThemeProvider } from "@/context/theme-context"
+import "./globals.css"
 
 const montserrat = Montserrat({ subsets: ["latin"] })
 

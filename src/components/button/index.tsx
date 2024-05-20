@@ -13,6 +13,7 @@ export const Button = ({ children, ...props }: ButtonProps) => {
 
     return (
         <button
+            id="button"
             onClick={() => 
                 setIsMarketCartOpen((isMarketCartOpen) => !isMarketCartOpen)
             }
